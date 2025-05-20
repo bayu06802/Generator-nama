@@ -1,0 +1,1759 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uchiha bayu</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    h2 {
+      text-align: center;
+    }
+    .password-box {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input[type="password"] {
+      padding: 8px;
+      font-size: 16px;
+      width: 250px;
+    }
+    .blue-btn {
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .delete-btn {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+    #notif {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Daftar Nama</h2>
+
+<div class="password-box">
+  <label>Password: </label>
+  <input type="password" id="passwordInput" placeholder="Ketik password...">
+  <button class="blue-btn" onclick="copyPassword()">Copy</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>FIRST</th>
+      <th>AKSI</th>
+      <th>LAST</th>
+      <th>AKSI</th>
+      <th>COPY</th>
+      <th>HAPUS</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td>Ahmad</td>
+      <td><button class="blue-btn" onclick="copyText('Ahmad')">Copy</button></td>
+      <td>Ramadhan</td>
+      <td><button class="blue-btn" onclick="copyText('Ramadhan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Ahmad Ramadhan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Ayu</td>
+      <td><button class="blue-btn" onclick="copyText('Ayu')">Copy</button></td>
+      <td>Lestari</td>
+      <td><button class="blue-btn" onclick="copyText('Lestari')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Ayu Lestari')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Budi</td>
+      <td><button class="blue-btn" onclick="copyText('Budi')">Copy</button></td>
+      <td>Santoso</td>
+      <td><button class="blue-btn" onclick="copyText('Santoso')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Budi Santoso')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Citra</td>
+      <td><button class="blue-btn" onclick="copyText('Citra')">Copy</button></td>
+      <td>Maharani</td>
+      <td><button class="blue-btn" onclick="copyText('Maharani')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Citra Maharani')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Dedi</td>
+      <td><button class="blue-btn" onclick="copyText('Dedi')">Copy</button></td>
+      <td>Pratama</td>
+      <td><button class="blue-btn" onclick="copyText('Pratama')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Dedi Pratama')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Eko</td>
+      <td><button class="blue-btn" onclick="copyText('Eko')">Copy</button></td>
+      <td>Saputra</td>
+      <td><button class="blue-btn" onclick="copyText('Saputra')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Eko Saputra')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Farhan</td>
+      <td><button class="blue-btn" onclick="copyText('Farhan')">Copy</button></td>
+      <td>Maulana</td>
+      <td><button class="blue-btn" onclick="copyText('Maulana')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Farhan Maulana')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Gita</td>
+      <td><button class="blue-btn" onclick="copyText('Gita')">Copy</button></td>
+      <td>Permata</td>
+      <td><button class="blue-btn" onclick="copyText('Permata')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Gita Permata')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Hendra</td>
+      <td><button class="blue-btn" onclick="copyText('Hendra')">Copy</button></td>
+      <td>Wijaya</td>
+      <td><button class="blue-btn" onclick="copyText('Wijaya')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Hendra Wijaya')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Indah</td>
+      <td><button class="blue-btn" onclick="copyText('Indah')">Copy</button></td>
+      <td>Sari</td>
+      <td><button class="blue-btn" onclick="copyText('Sari')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Indah Sari')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Joko</td>
+      <td><button class="blue-btn" onclick="copyText('Joko')">Copy</button></td>
+      <td>Widodo</td>
+      <td><button class="blue-btn" onclick="copyText('Widodo')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Joko Widodo')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Kartika</td>
+      <td><button class="blue-btn" onclick="copyText('Kartika')">Copy</button></td>
+      <td>Putri</td>
+      <td><button class="blue-btn" onclick="copyText('Putri')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Kartika Putri')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Lina</td>
+      <td><button class="blue-btn" onclick="copyText('Lina')">Copy</button></td>
+      <td>Marlina</td>
+      <td><button class="blue-btn" onclick="copyText('Marlina')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Lina Marlina')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Maya</td>
+      <td><button class="blue-btn" onclick="copyText('Maya')">Copy</button></td>
+      <td>Wulandari</td>
+      <td><button class="blue-btn" onclick="copyText('Wulandari')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Maya Wulandari')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Nurul</td>
+      <td><button class="blue-btn" onclick="copyText('Nurul')">Copy</button></td>
+      <td>Hidayati</td>
+      <td><button class="blue-btn" onclick="copyText('Hidayati')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Nurul Hidayati')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Oki</td>
+      <td><button class="blue-btn" onclick="copyText('Oki')">Copy</button></td>
+      <td>Setiawan</td>
+      <td><button class="blue-btn" onclick="copyText('Setiawan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Oki Setiawan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Putri</td>
+      <td><button class="blue-btn" onclick="copyText('Putri')">Copy</button></td>
+      <td>Amelia</td>
+      <td><button class="blue-btn" onclick="copyText('Amelia')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Putri Amelia')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Qori</td>
+      <td><button class="blue-btn" onclick="copyText('Qori')">Copy</button></td>
+      <td>Hidayat</td>
+      <td><button class="blue-btn" onclick="copyText('Hidayat')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Qori Hidayat')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Rizky</td>
+      <td><button class="blue-btn" onclick="copyText('Rizky')">Copy</button></td>
+      <td>Ananda</td>
+      <td><button class="blue-btn" onclick="copyText('Ananda')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Rizky Ananda')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Siti</td>
+      <td><button class="blue-btn" onclick="copyText('Siti')">Copy</button></td>
+      <td>Nurhaliza</td>
+      <td><button class="blue-btn" onclick="copyText('Nurhaliza')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Siti Nurhaliza')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Taufik</td>
+      <td><button class="blue-btn" onclick="copyText('Taufik')">Copy</button></td>
+      <td>Hidayat</td>
+      <td><button class="blue-btn" onclick="copyText('Hidayat')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Taufik Hidayat')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Umar</td>
+      <td><button class="blue-btn" onclick="copyText('Umar')">Copy</button></td>
+      <td>Syarif</td>
+      <td><button class="blue-btn" onclick="copyText('Syarif')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Umar Syarif')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Vina</td>
+      <td><button class="blue-btn" onclick="copyText('Vina')">Copy</button></td>
+      <td>Melati</td>
+      <td><button class="blue-btn" onclick="copyText('Melati')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Vina Melati')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Wawan</td>
+      <td><button class="blue-btn" onclick="copyText('Wawan')">Copy</button></td>
+      <td>Gunawan</td>
+      <td><button class="blue-btn" onclick="copyText('Gunawan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Wawan Gunawan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Xavier</td>
+      <td><button class="blue-btn" onclick="copyText('Xavier')">Copy</button></td>
+      <td>Pradana</td>
+      <td><button class="blue-btn" onclick="copyText('Pradana')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Xavier Pradana')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Yulia</td>
+      <td><button class="blue-btn" onclick="copyText('Yulia')">Copy</button></td>
+      <td>Safitri</td>
+      <td><button class="blue-btn" onclick="copyText('Safitri')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Yulia Safitri')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Zulkifli</td>
+      <td><button class="blue-btn" onclick="copyText('Zulkifli')">Copy</button></td>
+      <td>Rahman</td>
+      <td><button class="blue-btn" onclick="copyText('Rahman')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Zulkifli Rahman')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Andi</td>
+      <td><button class="blue-btn" onclick="copyText('Andi')">Copy</button></td>
+      <td>Saputra</td>
+      <td><button class="blue-btn" onclick="copyText('Saputra')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Andi Saputra')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Bella</td>
+      <td><button class="blue-btn" onclick="copyText('Bella')">Copy</button></td>
+      <td>Aprilia</td>
+      <td><button class="blue-btn" onclick="copyText('Aprilia')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Bella Aprilia')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Cahya</td>
+      <td><button class="blue-btn" onclick="copyText('Cahya')">Copy</button></td>
+      <td>Firmansyah</td>
+      <td><button class="blue-btn" onclick="copyText('Firmansyah')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Cahya Firmansyah')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Dion</td>
+      <td><button class="blue-btn" onclick="copyText('Dion')">Copy</button></td>
+      <td>Prasetyo</td>
+      <td><button class="blue-btn" onclick="copyText('Prasetyo')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Dion Prasetyo')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Elisa</td>
+      <td><button class="blue-btn" onclick="copyText('Elisa')">Copy</button></td>
+      <td>Purnama</td>
+      <td><button class="blue-btn" onclick="copyText('Purnama')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Elisa Purnama')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Fajar</td>
+      <td><button class="blue-btn" onclick="copyText('Fajar')">Copy</button></td>
+      <td>Ridwan</td>
+      <td><button class="blue-btn" onclick="copyText('Ridwan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Fajar Ridwan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Gilang</td>
+      <td><button class="blue-btn" onclick="copyText('Gilang')">Copy</button></td>
+      <td>Permana</td>
+      <td><button class="blue-btn" onclick="copyText('Permana')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Gilang Permana')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Hani</td>
+      <td><button class="blue-btn" onclick="copyText('Hani')">Copy</button></td>
+      <td>Kurniawati</td>
+      <td><button class="blue-btn" onclick="copyText('Kurniawati')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Hani Kurniawati')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Irfan</td>
+      <td><button class="blue-btn" onclick="copyText('Irfan')">Copy</button></td>
+      <td>Nugroho</td>
+      <td><button class="blue-btn" onclick="copyText('Nugroho')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Irfan Nugroho')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Jihan</td>
+      <td><button class="blue-btn" onclick="copyText('Jihan')">Copy</button></td>
+      <td>Nabila</td>
+      <td><button class="blue-btn" onclick="copyText('Nabila')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Jihan Nabila')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Kevin</td>
+      <td><button class="blue-btn" onclick="copyText('Kevin')">Copy</button></td>
+      <td>Wahyudi</td>
+      <td><button class="blue-btn" onclick="copyText('Wahyudi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Kevin Wahyudi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Lesti</td>
+      <td><button class="blue-btn" onclick="copyText('Lesti')">Copy</button></td>
+      <td>Handayani</td>
+      <td><button class="blue-btn" onclick="copyText('Handayani')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Lesti Handayani')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Marta</td>
+      <td><button class="blue-btn" onclick="copyText('Marta')">Copy</button></td>
+      <td>Susanti</td>
+      <td><button class="blue-btn" onclick="copyText('Susanti')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Marta Susanti')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Nanda</td>
+      <td><button class="blue-btn" onclick="copyText('Nanda')">Copy</button></td>
+      <td>Wijayanti</td>
+      <td><button class="blue-btn" onclick="copyText('Wijayanti')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Nanda Wijayanti')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Omar</td>
+      <td><button class="blue-btn" onclick="copyText('Omar')">Copy</button></td>
+      <td>Ramdani</td>
+      <td><button class="blue-btn" onclick="copyText('Ramdani')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Omar Ramdani')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Putu</td>
+      <td><button class="blue-btn" onclick="copyText('Putu')">Copy</button></td>
+      <td>Ardiansyah</td>
+      <td><button class="blue-btn" onclick="copyText('Ardiansyah')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Putu Ardiansyah')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Qisya</td>
+      <td><button class="blue-btn" onclick="copyText('Qisya')">Copy</button></td>
+      <td>Ramadhani</td>
+      <td><button class="blue-btn" onclick="copyText('Ramadhani')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Qisya Ramadhani')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Rendi</td>
+      <td><button class="blue-btn" onclick="copyText('Rendi')">Copy</button></td>
+      <td>Supriyadi</td>
+      <td><button class="blue-btn" onclick="copyText('Supriyadi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Rendi Supriyadi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Sandi</td>
+      <td><button class="blue-btn" onclick="copyText('Sandi')">Copy</button></td>
+      <td>Ramadhan</td>
+      <td><button class="blue-btn" onclick="copyText('Ramadhan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Sandi Ramadhan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Tiara</td>
+      <td><button class="blue-btn" onclick="copyText('Tiara')">Copy</button></td>
+      <td>Anggraini</td>
+      <td><button class="blue-btn" onclick="copyText('Anggraini')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Tiara Anggraini')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Umi</td>
+      <td><button class="blue-btn" onclick="copyText('Umi')">Copy</button></td>
+      <td>Latifah</td>
+      <td><button class="blue-btn" onclick="copyText('Latifah')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Umi Latifah')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Vega</td>
+      <td><button class="blue-btn" onclick="copyText('Vega')">Copy</button></td>
+      <td>Alamsyah</td>
+      <td><button class="blue-btn" onclick="copyText('Alamsyah')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Vega Alamsyah')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Wibi</td>
+      <td><button class="blue-btn" onclick="copyText('Wibi')">Copy</button></td>
+      <td>Aditya</td>
+      <td><button class="blue-btn" onclick="copyText('Aditya')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Wibi Aditya')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Xena</td>
+      <td><button class="blue-btn" onclick="copyText('Xena')">Copy</button></td>
+      <td>Pertiwi</td>
+      <td><button class="blue-btn" onclick="copyText('Pertiwi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Xena Pertiwi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Yoga</td>
+      <td><button class="blue-btn" onclick="copyText('Yoga')">Copy</button></td>
+      <td>Kristanto</td>
+      <td><button class="blue-btn" onclick="copyText('Kristanto')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Yoga Kristanto')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Zahra</td>
+      <td><button class="blue-btn" onclick="copyText('Zahra')">Copy</button></td>
+      <td>Nuraini</td>
+      <td><button class="blue-btn" onclick="copyText('Nuraini')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Zahra Nuraini')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Adit</td>
+      <td><button class="blue-btn" onclick="copyText('Adit')">Copy</button></td>
+      <td>Firmansyah</td>
+      <td><button class="blue-btn" onclick="copyText('Firmansyah')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Adit Firmansyah')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Bintang</td>
+      <td><button class="blue-btn" onclick="copyText('Bintang')">Copy</button></td>
+      <td>Arya</td>
+      <td><button class="blue-btn" onclick="copyText('Arya')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Bintang Arya')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Cici</td>
+      <td><button class="blue-btn" onclick="copyText('Cici')">Copy</button></td>
+      <td>Hermawati</td>
+      <td><button class="blue-btn" onclick="copyText('Hermawati')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Cici Hermawati')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Dian</td>
+      <td><button class="blue-btn" onclick="copyText('Dian')">Copy</button></td>
+      <td>Safitri</td>
+      <td><button class="blue-btn" onclick="copyText('Safitri')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Dian Safitri')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Eriska</td>
+      <td><button class="blue-btn" onclick="copyText('Eriska')">Copy</button></td>
+      <td>Suryanto</td>
+      <td><button class="blue-btn" onclick="copyText('Suryanto')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Eriska Suryanto')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Fikri</td>
+      <td><button class="blue-btn" onclick="copyText('Fikri')">Copy</button></td>
+      <td>Santoso</td>
+      <td><button class="blue-btn" onclick="copyText('Santoso')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Fikri Santoso')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Gilang</td>
+      <td><button class="blue-btn" onclick="copyText('Gilang')">Copy</button></td>
+      <td>Wahyudi</td>
+      <td><button class="blue-btn" onclick="copyText('Wahyudi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Gilang Wahyudi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Haris</td>
+      <td><button class="blue-btn" onclick="copyText('Haris')">Copy</button></td>
+      <td>Putra</td>
+      <td><button class="blue-btn" onclick="copyText('Putra')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Haris Putra')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Indri</td>
+      <td><button class="blue-btn" onclick="copyText('Indri')">Copy</button></td>
+      <td>Handayani</td>
+      <td><button class="blue-btn" onclick="copyText('Handayani')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Indri Handayani')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Jefri</td>
+      <td><button class="blue-btn" onclick="copyText('Jefri')">Copy</button></td>
+      <td>Mahendra</td>
+      <td><button class="blue-btn" onclick="copyText('Mahendra')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Jefri Mahendra')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Karina</td>
+      <td><button class="blue-btn" onclick="copyText('Karina')">Copy</button></td>
+      <td>Syafitri</td>
+      <td><button class="blue-btn" onclick="copyText('Syafitri')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Karina Syafitri')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Lutfi</td>
+      <td><button class="blue-btn" onclick="copyText('Lutfi')">Copy</button></td>
+      <td>Hakim</td>
+      <td><button class="blue-btn" onclick="copyText('Hakim')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Lutfi Hakim')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Melati</td>
+      <td><button class="blue-btn" onclick="copyText('Melati')">Copy</button></td>
+      <td>Kusuma</td>
+      <td><button class="blue-btn" onclick="copyText('Kusuma')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Melati Kusuma')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Nia</td>
+      <td><button class="blue-btn" onclick="copyText('Nia')">Copy</button></td>
+      <td>Fitriani</td>
+      <td><button class="blue-btn" onclick="copyText('Fitriani')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Nia Fitriani')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Oki</td>
+      <td><button class="blue-btn" onclick="copyText('Oki')">Copy</button></td>
+      <td>Perdana</td>
+      <td><button class="blue-btn" onclick="copyText('Perdana')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Oki Perdana')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Putra</td>
+      <td><button class="blue-btn" onclick="copyText('Putra')">Copy</button></td>
+      <td>Maulana</td>
+      <td><button class="blue-btn" onclick="copyText('Maulana')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Putra Maulana')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Qonita</td>
+      <td><button class="blue-btn" onclick="copyText('Qonita')">Copy</button></td>
+      <td>Haryanti</td>
+      <td><button class="blue-btn" onclick="copyText('Haryanti')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Qonita Haryanti')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Rini</td>
+      <td><button class="blue-btn" onclick="copyText('Rini')">Copy</button></td>
+      <td>Suryani</td>
+      <td><button class="blue-btn" onclick="copyText('Suryani')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Rini Suryani')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Septian</td>
+      <td><button class="blue-btn" onclick="copyText('Septian')">Copy</button></td>
+      <td>Aditya</td>
+      <td><button class="blue-btn" onclick="copyText('Aditya')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Septian Aditya')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Tegar</td>
+      <td><button class="blue-btn" onclick="copyText('Tegar')">Copy</button></td>
+      <td>Ramadhani</td>
+      <td><button class="blue-btn" onclick="copyText('Ramadhani')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Tegar Ramadhani')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Ujang</td>
+      <td><button class="blue-btn" onclick="copyText('Ujang')">Copy</button></td>
+      <td>Kurnia</td>
+      <td><button class="blue-btn" onclick="copyText('Kurnia')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Ujang Kurnia')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Viona</td>
+      <td><button class="blue-btn" onclick="copyText('Viona')">Copy</button></td>
+      <td>Lestari</td>
+      <td><button class="blue-btn" onclick="copyText('Lestari')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Viona Lestari')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Winda</td>
+      <td><button class="blue-btn" onclick="copyText('Winda')">Copy</button></td>
+      <td>Susanto</td>
+      <td><button class="blue-btn" onclick="copyText('Susanto')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Winda Susanto')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Xander</td>
+      <td><button class="blue-btn" onclick="copyText('Xander')">Copy</button></td>
+      <td>Nugraha</td>
+      <td><button class="blue-btn" onclick="copyText('Nugraha')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Xander Nugraha')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Yogi</td>
+      <td><button class="blue-btn" onclick="copyText('Yogi')">Copy</button></td>
+      <td>Permadi</td>
+      <td><button class="blue-btn" onclick="copyText('Permadi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Yogi Permadi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Zainal</td>
+      <td><button class="blue-btn" onclick="copyText('Zainal')">Copy</button></td>
+      <td>Abidin</td>
+      <td><button class="blue-btn" onclick="copyText('Abidin')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Zainal Abidin')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Alfian</td>
+      <td><button class="blue-btn" onclick="copyText('Alfian')">Copy</button></td>
+      <td>Hidayat</td>
+      <td><button class="blue-btn" onclick="copyText('Hidayat')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Alfian Hidayat')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Bagas</td>
+      <td><button class="blue-btn" onclick="copyText('Bagas')">Copy</button></td>
+      <td>Kurniawan</td>
+      <td><button class="blue-btn" onclick="copyText('Kurniawan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Bagas Kurniawan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Cindy</td>
+      <td><button class="blue-btn" onclick="copyText('Cindy')">Copy</button></td>
+      <td>Maharani</td>
+      <td><button class="blue-btn" onclick="copyText('Maharani')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Cindy Maharani')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Desi</td>
+      <td><button class="blue-btn" onclick="copyText('Desi')">Copy</button></td>
+      <td>Ananda</td>
+      <td><button class="blue-btn" onclick="copyText('Ananda')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Desi Ananda')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Erwin</td>
+      <td><button class="blue-btn" onclick="copyText('Erwin')">Copy</button></td>
+      <td>Saputra</td>
+      <td><button class="blue-btn" onclick="copyText('Saputra')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Erwin Saputra')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Fajar</td>
+      <td><button class="blue-btn" onclick="copyText('Fajar')">Copy</button></td>
+      <td>Wahyu</td>
+      <td><button class="blue-btn" onclick="copyText('Wahyu')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Fajar Wahyu')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Gita</td>
+      <td><button class="blue-btn" onclick="copyText('Gita')">Copy</button></td>
+      <td>Handayani</td>
+      <td><button class="blue-btn" onclick="copyText('Handayani')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Gita Handayani')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Hana</td>
+      <td><button class="blue-btn" onclick="copyText('Hana')">Copy</button></td>
+      <td>Kartika</td>
+      <td><button class="blue-btn" onclick="copyText('Kartika')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Hana Kartika')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Ilham</td>
+      <td><button class="blue-btn" onclick="copyText('Ilham')">Copy</button></td>
+      <td>Permadi</td>
+      <td><button class="blue-btn" onclick="copyText('Permadi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Ilham Permadi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Jihan</td>
+      <td><button class="blue-btn" onclick="copyText('Jihan')">Copy</button></td>
+      <td>Rizky</td>
+      <td><button class="blue-btn" onclick="copyText('Rizky')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Jihan Rizky')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Kenny</td>
+      <td><button class="blue-btn" onclick="copyText('Kenny')">Copy</button></td>
+      <td>Rahmat</td>
+      <td><button class="blue-btn" onclick="copyText('Rahmat')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Kenny Rahmat')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Lia</td>
+      <td><button class="blue-btn" onclick="copyText('Lia')">Copy</button></td>
+      <td>Kusnadi</td>
+      <td><button class="blue-btn" onclick="copyText('Kusnadi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Lia Kusnadi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Miko</td>
+      <td><button class="blue-btn" onclick="copyText('Miko')">Copy</button></td>
+      <td>Gunawan</td>
+      <td><button class="blue-btn" onclick="copyText('Gunawan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Miko Gunawan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Nindi</td>
+      <td><button class="blue-btn" onclick="copyText('Nindi')">Copy</button></td>
+      <td>Purnama</td>
+      <td><button class="blue-btn" onclick="copyText('Purnama')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Nindi Purnama')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Omar</td>
+      <td><button class="blue-btn" onclick="copyText('Omar')">Copy</button></td>
+      <td>Yulianto</td>
+      <td><button class="blue-btn" onclick="copyText('Yulianto')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Omar Yulianto')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Purnomo</td>
+      <td><button class="blue-btn" onclick="copyText('Purnomo')">Copy</button></td>
+      <td>Hadi</td>
+      <td><button class="blue-btn" onclick="copyText('Hadi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Purnomo Hadi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Qaisar</td>
+      <td><button class="blue-btn" onclick="copyText('Qaisar')">Copy</button></td>
+      <td>Prasetyo</td>
+      <td><button class="blue-btn" onclick="copyText('Prasetyo')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Qaisar Prasetyo')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Rizal</td>
+      <td><button class="blue-btn" onclick="copyText('Rizal')">Copy</button></td>
+      <td>Setiawan</td>
+      <td><button class="blue-btn" onclick="copyText('Setiawan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Rizal Setiawan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Siska</td>
+      <td><button class="blue-btn" onclick="copyText('Siska')">Copy</button></td>
+      <td>Amelia</td>
+      <td><button class="blue-btn" onclick="copyText('Amelia')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Siska Amelia')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Toni</td>
+      <td><button class="blue-btn" onclick="copyText('Toni')">Copy</button></td>
+      <td>Wijaya</td>
+      <td><button class="blue-btn" onclick="copyText('Wijaya')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Toni Wijaya')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Udin</td>
+      <td><button class="blue-btn" onclick="copyText('Udin')">Copy</button></td>
+      <td>Maulana</td>
+      <td><button class="blue-btn" onclick="copyText('Maulana')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Udin Maulana')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Vera</td>
+      <td><button class="blue-btn" onclick="copyText('Vera')">Copy</button></td>
+      <td>Rahmi</td>
+      <td><button class="blue-btn" onclick="copyText('Rahmi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Vera Rahmi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Willy</td>
+      <td><button class="blue-btn" onclick="copyText('Willy')">Copy</button></td>
+      <td>Hartanto</td>
+      <td><button class="blue-btn" onclick="copyText('Hartanto')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Willy Hartanto')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Xaverius</td>
+      <td><button class="blue-btn" onclick="copyText('Xaverius')">Copy</button></td>
+      <td>Darma</td>
+      <td><button class="blue-btn" onclick="copyText('Darma')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Xaverius Darma')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Yani</td>
+      <td><button class="blue-btn" onclick="copyText('Yani')">Copy</button></td>
+      <td>Wahyuni</td>
+      <td><button class="blue-btn" onclick="copyText('Wahyuni')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Yani Wahyuni')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Zamzam</td>
+      <td><button class="blue-btn" onclick="copyText('Zamzam')">Copy</button></td>
+      <td>Alamsyah</td>
+      <td><button class="blue-btn" onclick="copyText('Alamsyah')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Zamzam Alamsyah')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Andre</td>
+      <td><button class="blue-btn" onclick="copyText('Andre')">Copy</button></td>
+      <td>Wirawan</td>
+      <td><button class="blue-btn" onclick="copyText('Wirawan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Andre Wirawan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Bobby</td>
+      <td><button class="blue-btn" onclick="copyText('Bobby')">Copy</button></td>
+      <td>Gunawan</td>
+      <td><button class="blue-btn" onclick="copyText('Gunawan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Bobby Gunawan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Citra</td>
+      <td><button class="blue-btn" onclick="copyText('Citra')">Copy</button></td>
+      <td>Fitriani</td>
+      <td><button class="blue-btn" onclick="copyText('Fitriani')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Citra Fitriani')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Della</td>
+      <td><button class="blue-btn" onclick="copyText('Della')">Copy</button></td>
+      <td>Wulandari</td>
+      <td><button class="blue-btn" onclick="copyText('Wulandari')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Della Wulandari')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Ega</td>
+      <td><button class="blue-btn" onclick="copyText('Ega')">Copy</button></td>
+      <td>Kurnia</td>
+      <td><button class="blue-btn" onclick="copyText('Kurnia')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Ega Kurnia')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Feri</td>
+      <td><button class="blue-btn" onclick="copyText('Feri')">Copy</button></td>
+      <td>Suryana</td>
+      <td><button class="blue-btn" onclick="copyText('Suryana')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Feri Suryana')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Gina</td>
+      <td><button class="blue-btn" onclick="copyText('Gina')">Copy</button></td>
+      <td>Sari</td>
+      <td><button class="blue-btn" onclick="copyText('Sari')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Gina Sari')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Heru</td>
+      <td><button class="blue-btn" onclick="copyText('Heru')">Copy</button></td>
+      <td>Kurniawan</td>
+      <td><button class="blue-btn" onclick="copyText('Kurniawan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Heru Kurniawan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Indah</td>
+      <td><button class="blue-btn" onclick="copyText('Indah')">Copy</button></td>
+      <td>Pratiwi</td>
+      <td><button class="blue-btn" onclick="copyText('Pratiwi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Indah Pratiwi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Joni</td>
+      <td><button class="blue-btn" onclick="copyText('Joni')">Copy</button></td>
+      <td>Adi</td>
+      <td><button class="blue-btn" onclick="copyText('Adi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Joni Adi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Karno</td>
+      <td><button class="blue-btn" onclick="copyText('Karno')">Copy</button></td>
+      <td>Yudhistira</td>
+      <td><button class="blue-btn" onclick="copyText('Yudhistira')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Karno Yudhistira')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Lutfi</td>
+      <td><button class="blue-btn" onclick="copyText('Lutfi')">Copy</button></td>
+      <td>Ramadhan</td>
+      <td><button class="blue-btn" onclick="copyText('Ramadhan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Lutfi Ramadhan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Mahmud</td>
+      <td><button class="blue-btn" onclick="copyText('Mahmud')">Copy</button></td>
+      <td>Prasetyo</td>
+      <td><button class="blue-btn" onclick="copyText('Prasetyo')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Mahmud Prasetyo')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Nadia</td>
+      <td><button class="blue-btn" onclick="copyText('Nadia')">Copy</button></td>
+      <td>Salsabila</td>
+      <td><button class="blue-btn" onclick="copyText('Salsabila')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Nadia Salsabila')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Odi</td>
+      <td><button class="blue-btn" onclick="copyText('Odi')">Copy</button></td>
+      <td>Kurniawan</td>
+      <td><button class="blue-btn" onclick="copyText('Kurniawan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Odi Kurniawan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Putri</td>
+      <td><button class="blue-btn" onclick="copyText('Putri')">Copy</button></td>
+      <td>Ayu</td>
+      <td><button class="blue-btn" onclick="copyText('Ayu')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Putri Ayu')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Qayyim</td>
+      <td><button class="blue-btn" onclick="copyText('Qayyim')">Copy</button></td>
+      <td>Hanif</td>
+      <td><button class="blue-btn" onclick="copyText('Hanif')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Qayyim Hanif')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Rara</td>
+      <td><button class="blue-btn" onclick="copyText('Rara')">Copy</button></td>
+      <td>Oktaviani</td>
+      <td><button class="blue-btn" onclick="copyText('Oktaviani')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Rara Oktaviani')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Seno</td>
+      <td><button class="blue-btn" onclick="copyText('Seno')">Copy</button></td>
+      <td>Wibowo</td>
+      <td><button class="blue-btn" onclick="copyText('Wibowo')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Seno Wibowo')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Taufan</td>
+      <td><button class="blue-btn" onclick="copyText('Taufan')">Copy</button></td>
+      <td>Nugroho</td>
+      <td><button class="blue-btn" onclick="copyText('Nugroho')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Taufan Nugroho')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Utami</td>
+      <td><button class="blue-btn" onclick="copyText('Utami')">Copy</button></td>
+      <td>Safira</td>
+      <td><button class="blue-btn" onclick="copyText('Safira')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Utami Safira')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Vito</td>
+      <td><button class="blue-btn" onclick="copyText('Vito')">Copy</button></td>
+      <td>Azzahra</td>
+      <td><button class="blue-btn" onclick="copyText('Azzahra')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Vito Azzahra')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Wahyu</td>
+      <td><button class="blue-btn" onclick="copyText('Wahyu')">Copy</button></td>
+      <td>Bintang</td>
+      <td><button class="blue-btn" onclick="copyText('Bintang')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Wahyu Bintang')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Xaverius</td>
+      <td><button class="blue-btn" onclick="copyText('Xaverius')">Copy</button></td>
+      <td>Prasetyo</td>
+      <td><button class="blue-btn" onclick="copyText('Prasetyo')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Xaverius Prasetyo')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Yosua</td>
+      <td><button class="blue-btn" onclick="copyText('Yosua')">Copy</button></td>
+      <td>Ardiansyah</td>
+      <td><button class="blue-btn" onclick="copyText('Ardiansyah')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Yosua Ardiansyah')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Zaki</td>
+      <td><button class="blue-btn" onclick="copyText('Zaki')">Copy</button></td>
+      <td>Fauzan</td>
+      <td><button class="blue-btn" onclick="copyText('Fauzan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Zaki Fauzan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Anita</td>
+      <td><button class="blue-btn" onclick="copyText('Anita')">Copy</button></td>
+      <td>Hapsari</td>
+      <td><button class="blue-btn" onclick="copyText('Hapsari')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Anita Hapsari')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Bambang</td>
+      <td><button class="blue-btn" onclick="copyText('Bambang')">Copy</button></td>
+      <td>Triyono</td>
+      <td><button class="blue-btn" onclick="copyText('Triyono')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Bambang Triyono')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Cahaya</td>
+      <td><button class="blue-btn" onclick="copyText('Cahaya')">Copy</button></td>
+      <td>Rizaldi</td>
+      <td><button class="blue-btn" onclick="copyText('Rizaldi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Cahaya Rizaldi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Dewi</td>
+      <td><button class="blue-btn" onclick="copyText('Dewi')">Copy</button></td>
+      <td>Kartikasari</td>
+      <td><button class="blue-btn" onclick="copyText('Kartikasari')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Dewi Kartikasari')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Erik</td>
+      <td><button class="blue-btn" onclick="copyText('Erik')">Copy</button></td>
+      <td>Putra</td>
+      <td><button class="blue-btn" onclick="copyText('Putra')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Erik Putra')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Febby</td>
+      <td><button class="blue-btn" onclick="copyText('Febby')">Copy</button></td>
+      <td>Harjono</td>
+      <td><button class="blue-btn" onclick="copyText('Harjono')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Febby Harjono')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Gani</td>
+      <td><button class="blue-btn" onclick="copyText('Gani')">Copy</button></td>
+      <td>Ridwan</td>
+      <td><button class="blue-btn" onclick="copyText('Ridwan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Gani Ridwan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Hendra</td>
+      <td><button class="blue-btn" onclick="copyText('Hendra')">Copy</button></td>
+      <td>Wijaya</td>
+      <td><button class="blue-btn" onclick="copyText('Wijaya')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Hendra Wijaya')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Imam</td>
+      <td><button class="blue-btn" onclick="copyText('Imam')">Copy</button></td>
+      <td>Taufik</td>
+      <td><button class="blue-btn" onclick="copyText('Taufik')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Imam Taufik')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Julianto</td>
+      <td><button class="blue-btn" onclick="copyText('Julianto')">Copy</button></td>
+      <td>Santoso</td>
+      <td><button class="blue-btn" onclick="copyText('Santoso')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Julianto Santoso')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Kamaluddin</td>
+      <td><button class="blue-btn" onclick="copyText('Kamaluddin')">Copy</button></td>
+      <td>Hakim</td>
+      <td><button class="blue-btn" onclick="copyText('Hakim')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Kamaluddin Hakim')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Lina</td>
+      <td><button class="blue-btn" onclick="copyText('Lina')">Copy</button></td>
+      <td>Astuti</td>
+      <td><button class="blue-btn" onclick="copyText('Astuti')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Lina Astuti')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Melinda</td>
+      <td><button class="blue-btn" onclick="copyText('Melinda')">Copy</button></td>
+      <td>Pranata</td>
+      <td><button class="blue-btn" onclick="copyText('Pranata')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Melinda Pranata')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Novita</td>
+      <td><button class="blue-btn" onclick="copyText('Novita')">Copy</button></td>
+      <td>Rahayu</td>
+      <td><button class="blue-btn" onclick="copyText('Rahayu')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Novita Rahayu')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Okta</td>
+      <td><button class="blue-btn" onclick="copyText('Okta')">Copy</button></td>
+      <td>Wicaksono</td>
+      <td><button class="blue-btn" onclick="copyText('Wicaksono')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Okta Wicaksono')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Pratama</td>
+      <td><button class="blue-btn" onclick="copyText('Pratama')">Copy</button></td>
+      <td>Rendy</td>
+      <td><button class="blue-btn" onclick="copyText('Rendy')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Pratama Rendy')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Quintana</td>
+      <td><button class="blue-btn" onclick="copyText('Quintana')">Copy</button></td>
+      <td>Nugraha</td>
+      <td><button class="blue-btn" onclick="copyText('Nugraha')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Quintana Nugraha')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Rifki</td>
+      <td><button class="blue-btn" onclick="copyText('Rifki')">Copy</button></td>
+      <td>Faisal</td>
+      <td><button class="blue-btn" onclick="copyText('Faisal')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Rifki Faisal')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Silvia</td>
+      <td><button class="blue-btn" onclick="copyText('Silvia')">Copy</button></td>
+      <td>Yunita</td>
+      <td><button class="blue-btn" onclick="copyText('Yunita')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Silvia Yunita')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Tri</td>
+      <td><button class="blue-btn" onclick="copyText('Tri')">Copy</button></td>
+      <td>Susanto</td>
+      <td><button class="blue-btn" onclick="copyText('Susanto')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Tri Susanto')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Umar</td>
+      <td><button class="blue-btn" onclick="copyText('Umar')">Copy</button></td>
+      <td>Ramadhan</td>
+      <td><button class="blue-btn" onclick="copyText('Ramadhan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Umar Ramadhan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Veronica</td>
+      <td><button class="blue-btn" onclick="copyText('Veronica')">Copy</button></td>
+      <td>Dewi</td>
+      <td><button class="blue-btn" onclick="copyText('Dewi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Veronica Dewi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>William</td>
+      <td><button class="blue-btn" onclick="copyText('William')">Copy</button></td>
+      <td>Hartanto</td>
+      <td><button class="blue-btn" onclick="copyText('Hartanto')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('William Hartanto')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Xaveria</td>
+      <td><button class="blue-btn" onclick="copyText('Xaveria')">Copy</button></td>
+      <td>Kusuma</td>
+      <td><button class="blue-btn" onclick="copyText('Kusuma')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Xaveria Kusuma')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Yusuf</td>
+      <td><button class="blue-btn" onclick="copyText('Yusuf')">Copy</button></td>
+      <td>Maulana</td>
+      <td><button class="blue-btn" onclick="copyText('Maulana')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Yusuf Maulana')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Zahira</td>
+      <td><button class="blue-btn" onclick="copyText('Zahira')">Copy</button></td>
+      <td>Salsabila</td>
+      <td><button class="blue-btn" onclick="copyText('Salsabila')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Zahira Salsabila')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Amir</td>
+      <td><button class="blue-btn" onclick="copyText('Amir')">Copy</button></td>
+      <td>Hamzah</td>
+      <td><button class="blue-btn" onclick="copyText('Hamzah')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Amir Hamzah')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Benny</td>
+      <td><button class="blue-btn" onclick="copyText('Benny')">Copy</button></td>
+      <td>Kurnia</td>
+      <td><button class="blue-btn" onclick="copyText('Kurnia')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Benny Kurnia')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Cindy</td>
+      <td><button class="blue-btn" onclick="copyText('Cindy')">Copy</button></td>
+      <td>Ardelia</td>
+      <td><button class="blue-btn" onclick="copyText('Ardelia')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Cindy Ardelia')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Dian</td>
+      <td><button class="blue-btn" onclick="copyText('Dian')">Copy</button></td>
+      <td>Pertiwi</td>
+      <td><button class="blue-btn" onclick="copyText('Pertiwi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Dian Pertiwi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Edwin</td>
+      <td><button class="blue-btn" onclick="copyText('Edwin')">Copy</button></td>
+      <td>Adinata</td>
+      <td><button class="blue-btn" onclick="copyText('Adinata')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Edwin Adinata')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Felix</td>
+      <td><button class="blue-btn" onclick="copyText('Felix')">Copy</button></td>
+      <td>Handoko</td>
+      <td><button class="blue-btn" onclick="copyText('Handoko')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Felix Handoko')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Gustav</td>
+      <td><button class="blue-btn" onclick="copyText('Gustav')">Copy</button></td>
+      <td>Yulianto</td>
+      <td><button class="blue-btn" onclick="copyText('Yulianto')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Gustav Yulianto')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Husni</td>
+      <td><button class="blue-btn" onclick="copyText('Husni')">Copy</button></td>
+      <td>Fahmi</td>
+      <td><button class="blue-btn" onclick="copyText('Fahmi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Husni Fahmi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Irma</td>
+      <td><button class="blue-btn" onclick="copyText('Irma')">Copy</button></td>
+      <td>Lestari</td>
+      <td><button class="blue-btn" onclick="copyText('Lestari')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Irma Lestari')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Jefri</td>
+      <td><button class="blue-btn" onclick="copyText('Jefri')">Copy</button></td>
+      <td>Oktavianus</td>
+      <td><button class="blue-btn" onclick="copyText('Oktavianus')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Jefri Oktavianus')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Kusnadi</td>
+      <td><button class="blue-btn" onclick="copyText('Kusnadi')">Copy</button></td>
+      <td>Wahyudi</td>
+      <td><button class="blue-btn" onclick="copyText('Wahyudi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Kusnadi Wahyudi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Lukas</td>
+      <td><button class="blue-btn" onclick="copyText('Lukas')">Copy</button></td>
+      <td>Rinaldi</td>
+      <td><button class="blue-btn" onclick="copyText('Rinaldi')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Lukas Rinaldi')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Mira</td>
+      <td><button class="blue-btn" onclick="copyText('Mira')">Copy</button></td>
+      <td>Fadillah</td>
+      <td><button class="blue-btn" onclick="copyText('Fadillah')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Mira Fadillah')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Nina</td>
+      <td><button class="blue-btn" onclick="copyText('Nina')">Copy</button></td>
+      <td>Kurniasari</td>
+      <td><button class="blue-btn" onclick="copyText('Kurniasari')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Nina Kurniasari')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Oki</td>
+      <td><button class="blue-btn" onclick="copyText('Oki')">Copy</button></td>
+      <td>Wijaya</td>
+      <td><button class="blue-btn" onclick="copyText('Wijaya')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Oki Wijaya')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Prameswari</td>
+      <td><button class="blue-btn" onclick="copyText('Prameswari')">Copy</button></td>
+      <td>Indah</td>
+      <td><button class="blue-btn" onclick="copyText('Indah')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Prameswari Indah')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Qorin</td>
+      <td><button class="blue-btn" onclick="copyText('Qorin')">Copy</button></td>
+      <td>Azzahra</td>
+      <td><button class="blue-btn" onclick="copyText('Azzahra')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Qorin Azzahra')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Reza</td>
+      <td><button class="blue-btn" onclick="copyText('Reza')">Copy</button></td>
+      <td>Putri</td>
+      <td><button class="blue-btn" onclick="copyText('Putri')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Reza Putri')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Sandi</td>
+      <td><button class="blue-btn" onclick="copyText('Sandi')">Copy</button></td>
+      <td>Hardiman</td>
+      <td><button class="blue-btn" onclick="copyText('Hardiman')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Sandi Hardiman')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Tania</td>
+      <td><button class="blue-btn" onclick="copyText('Tania')">Copy</button></td>
+      <td>Puspita</td>
+      <td><button class="blue-btn" onclick="copyText('Puspita')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Tania Puspita')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Umi</td>
+      <td><button class="blue-btn" onclick="copyText('Umi')">Copy</button></td>
+      <td>Rosyidah</td>
+      <td><button class="blue-btn" onclick="copyText('Rosyidah')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Umi Rosyidah')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Vera</td>
+      <td><button class="blue-btn" onclick="copyText('Vera')">Copy</button></td>
+      <td>Melani</td>
+      <td><button class="blue-btn" onclick="copyText('Melani')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Vera Melani')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Widya</td>
+      <td><button class="blue-btn" onclick="copyText('Widya')">Copy</button></td>
+      <td>Handayani</td>
+      <td><button class="blue-btn" onclick="copyText('Handayani')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Widya Handayani')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Xavi</td>
+      <td><button class="blue-btn" onclick="copyText('Xavi')">Copy</button></td>
+      <td>Ferdinan</td>
+      <td><button class="blue-btn" onclick="copyText('Ferdinan')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Xavi Ferdinan')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Yuna</td>
+      <td><button class="blue-btn" onclick="copyText('Yuna')">Copy</button></td>
+      <td>Maharani</td>
+      <td><button class="blue-btn" onclick="copyText('Maharani')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Yuna Maharani')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+    <tr>
+      <td>Zuhairi</td>
+      <td><button class="blue-btn" onclick="copyText('Zuhairi')">Copy</button></td>
+      <td>Syamsuddin</td>
+      <td><button class="blue-btn" onclick="copyText('Syamsuddin')">Copy</button></td>
+      <td><button class="blue-btn" onclick="copyText('Zuhairi Syamsuddin')">Semua</button></td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<p id="notif"></p>
+
+<script>
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      document.getElementById("notif").innerText = "Disalin: " + text;
+    }).catch(() => {
+      document.getElementById("notif").innerText = "Gagal menyalin!";
+    });
+  }
+
+  function copyPassword() {
+    const pw = document.getElementById("passwordInput").value;
+    if (pw.trim() === "") {
+      document.getElementById("notif").innerText = "Password kosong!";
+      return;
+    }
+    copyText(pw);
+  }
+
+  function deleteRow(button) {
+    button.closest('tr').remove();
+  }
+</script>
+
+</body>
+</html>
